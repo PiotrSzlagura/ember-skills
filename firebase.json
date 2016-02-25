@@ -1,0 +1,9 @@
+{
+  "firebase": "skills-list",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

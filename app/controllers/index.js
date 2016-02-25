@@ -13,6 +13,33 @@ export default Ember.Controller.extend({
 
     removeSkill(skill) {
       skill.destroyRecord();
+    },
+
+
+    addSkill(skillName) {
+
+      if (skillName.length === 0 || skillName === undefined) {
+        alert("Name can't be empty");
+      }
+      else if (skillName.length >= 30) {
+        alert("Name is too long.");
+      }
+      else {
+        let newSkill = this.store.createRecord('skill', {
+          name: skillName,
+          step1: true,
+          step2: false,
+          step3: false
+        });
+
+        var myController = this.controller;
+        newSkill.save()/*.then(function(myController){
+         myController.set("skillName", "");
+         });*/
+
+        this.set("skillName", "");
+
+      }
     }
   }
 
