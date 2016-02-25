@@ -8,6 +8,8 @@ export default Ember.Controller.extend({
       console.log(`${skill} step${step} ` + end);
       //console.log(`Step: ${step}, current: ${currentState} end state: ${endState}`);
       skill.save();
+
+
     }
   }
 });
