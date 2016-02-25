@@ -25,6 +25,7 @@ export default Ember.Route.extend({
             step2: false,
             step3: false
           });
+
           newSkill.save();
           this.controller.set('skillName', '');
         }

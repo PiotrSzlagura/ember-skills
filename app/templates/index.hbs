@@ -37,9 +37,11 @@
           </div>
       </div>
   {{/each}}
+  <form {{action 'addSkill' skillName on="submit" }}>
+    {{paper-input label='New skill..' value=skillName}}
+    {{#paper-button}}Dodaj{{/paper-button}}
+  </form>
 
-    {{input class='form-control input-block' placeholder='New skill..' value=skillName}}
-    {{#paper-button action='addSkill' param=skillName}}Dodaj{{/paper-button}}
 
 
 
