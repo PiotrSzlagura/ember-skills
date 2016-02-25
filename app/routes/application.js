@@ -7,17 +7,27 @@ export default Ember.Route.extend({
 
     actions: {
       addSkill(skillName) {
-        let newSkill = this.store.createRecord('skill', {
-          name: skillName,
-          step1: true,
-          step2: false,
-          step3: false
-        });
-
-
-        newSkill.save();
-
-        this.controller.set('skillName', '');
+        if(skillName.length === 0 || skillName === undefined)
+        {
+          alert("Name can't be empty");
+          return false;
+        }
+        else if(skillName.length >= 30)
+        {
+          alert("Name is too long.");
+          return false;
+        }
+        else
+        {
+          let newSkill = this.store.createRecord('skill', {
+            name: skillName,
+            step1: true,
+            step2: false,
+            step3: false
+          });
+          newSkill.save();
+          this.controller.set('skillName', '');
+        }
       },
       updateSkill(skill, step) {
         let end = !skill.get(`step${step}`);
