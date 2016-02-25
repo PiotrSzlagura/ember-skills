@@ -23,7 +23,8 @@ export default Ember.Route.extend({
       let currentState = skillToChange.get(`step${step}`);
       let endState = !currentState;
       skillToChange.set(`step${step}`, endState);
-      alert(`Step: ${step}, current: ${currentState} end state: ${endState}`);
+      // alert(`Step: ${step}, current: ${currentState} end state: ${endState}`);
+      skillToChange.save();
     }
   }
 
