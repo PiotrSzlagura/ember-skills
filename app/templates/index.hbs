@@ -1,47 +1,47 @@
 <div class="skills">
 
-  <div class="row">
-      <div class="col-lg-5">
+  <div class="row hidden-sm hidden-xs">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
           Name
       </div>
-      <div class="col-lg-2">
+      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
           Step 1
       </div>
-      <div class="col-lg-2">
+      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
           Step 2
       </div>
-      <div class="col-lg-2">
+      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
           Step 3
       </div>
-      <div class="col-lg-1">
-          Remove
+      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+          &nbsp;
       </div>
   </div>
 
   {{#each model as |skill|}}
       <div class="row" {{action 'updateSkill' skill}}>
-          <div class="col-lg-5">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
               {{skill.name}}
           </div>
-          <div class="col-lg-2">
+          <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
               {{paper-checkbox checked=skill.step1}}
           </div>
-          <div class="col-lg-2">
+          <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
               {{paper-checkbox checked=skill.step2}}
           </div>
-          <div class="col-lg-2">
+          <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
               {{paper-checkbox checked=skill.step3}}
           </div>
-          <div class="col-lg-1">
-              <span class="glyphicon glyphicon-remove" {{action 'removeSkill' skill}}></span>
+          <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+            {{#paper-button class="center-block" action='removeSkill' param=skill size="md"}}{{paper-icon "delete"}}{{/paper-button}}
           </div>
       </div>
   {{/each}}
 
     {{input class='form-control input-block' placeholder='New skill..' value=skillName}}
     {{#paper-button action='addSkill' param=skillName}}Dodaj{{/paper-button}}
-    {{#paper-button action="flatButton"}}Button with action{{/paper-button}}
-  
+
+
 
 </div>
 
