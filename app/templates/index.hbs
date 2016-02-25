@@ -1,0 +1,46 @@
+<div class="skills">
+
+  <div class="row">
+      <div class="col-lg-5">
+          Name
+      </div>
+      <div class="col-lg-2">
+          Step 1
+      </div>
+      <div class="col-lg-2">
+          Step 2
+      </div>
+      <div class="col-lg-2">
+          Step 3
+      </div>
+      <div class="col-lg-1">
+          Remove
+      </div>
+  </div>
+
+  {{#each model as |skill|}}
+      <div class="row">
+          <div class="col-lg-5">
+              {{skill.name}}
+          </div>
+          <div class="col-lg-2" {{action 'updateSkill' skill 1}}>
+              {{input type="checkbox" checked=skill.step1}}
+          </div>
+          <div class="col-lg-2" {{action 'updateSkill' skill 1}}>
+              {{input type="checkbox" checked=skill.step2}}
+          </div>
+          <div class="col-lg-2" {{action 'updateSkill' skill 1}}>
+              {{input type="checkbox" checked=skill.step3}}
+          </div>
+          <div class="col-lg-1">
+              <span class="glyphicon glyphicon-remove"></span>
+          </div>
+      </div>
+  {{/each}}
+  <form>
+    {{input class='form-control input-block' placeholder='New skill..' value=skillName}}
+    <button type="submit" class="btn btn-default" {{action 'addSkill' skillName}}>Dodaj</button>
+  </form>
+
+</div>
+
