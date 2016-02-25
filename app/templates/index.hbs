@@ -24,13 +24,13 @@
               {{skill.name}}
           </div>
           <div class="col-lg-2">
-              <input type="checkbox" checked={{skill.step1}} onclick={{action 'updateSkill' skill}}>
+              <input type="checkbox" checked={{skill.step1}} {{action 'updateSkill' skill 1}}>
           </div>
           <div class="col-lg-2">
-              <input type="checkbox" checked={{skill.step2}}>
+              <input type="checkbox" checked={{skill.step2}} {{action 'updateSkill' skill 2}}>
           </div>
           <div class="col-lg-2">
-              <input type="checkbox" checked={{skill.step3}}>
+              <input type="checkbox" checked={{skill.step3}} {{action 'updateSkill' skill 3}}>
           </div>
           <div class="col-lg-1">
               <span class="glyphicon glyphicon-remove"></span>
