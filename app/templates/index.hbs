@@ -19,27 +19,27 @@
   </div>
 
   {{#each model as |skill|}}
-      <div class="row">
+      <div class="row" {{action 'updateSkill' skill}}>
           <div class="col-lg-5">
               {{skill.name}}
           </div>
           <div class="col-lg-2">
-              <input type="checkbox" checked={{skill.step1}} {{action 'updateSkill' skill 1}}>
+              {{paper-checkbox checked=skill.step1}}
           </div>
           <div class="col-lg-2">
-              <input type="checkbox" checked={{skill.step2}} {{action 'updateSkill' skill 2}}>
+              {{paper-checkbox checked=skill.step2}}
           </div>
           <div class="col-lg-2">
-              <input type="checkbox" checked={{skill.step3}} {{action 'updateSkill' skill 3}}>
+              {{paper-checkbox checked=skill.step3}}
           </div>
           <div class="col-lg-1">
-              <span class="glyphicon glyphicon-remove"></span>
+              <span class="glyphicon glyphicon-remove" {{action 'removeSkill' skill}}></span>
           </div>
       </div>
   {{/each}}
   <form>
     {{input class='form-control input-block' placeholder='New skill..' value=skillName}}
-    <button type="submit" class="btn btn-default" {{action 'addSkill' skillName}}>Dodaj</button>
+    {{#paper-button action 'addSkill' param=skillName}}>Dodaj{{/paper-button}}
   </form>
 
 </div>
