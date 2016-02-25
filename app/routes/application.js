@@ -19,12 +19,15 @@ export default Ember.Route.extend({
       this.controller.set('skillName', '');
     },
 
-    updateSkill(skillToChange, step) {
-      let currentState = skillToChange.get(`step${step}`);
+    updateSkills() {
+      /*let currentState = skillToChange.get(`step${step}`);
       let endState = !currentState;
       skillToChange.set(`step${step}`, endState);
-      // alert(`Step: ${step}, current: ${currentState} end state: ${endState}`);
-      skillToChange.save();
+
+      alert(`Step: ${step}, current: ${currentState} end state: ${endState}`);*/
+      //this.store.findAll('skill').save();
+
+      console.log("Działa")
     }
   }
 

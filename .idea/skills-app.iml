@@ -8,5 +8,6 @@
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.6.0, RVM: ruby-2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v10.5.0, RVM: ruby-2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uglifier (v2.7.2, RVM: ruby-2.3.0) [gem]" level="application" />
+    <orderEntry type="library" name="ember-skills node_modules" level="project" />
   </component>
 </module>
