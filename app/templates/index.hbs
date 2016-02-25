@@ -37,10 +37,11 @@
           </div>
       </div>
   {{/each}}
-  <form>
+
     {{input class='form-control input-block' placeholder='New skill..' value=skillName}}
-    {{#paper-button action 'addSkill' param=skillName}}>Dodaj{{/paper-button}}
-  </form>
+    {{#paper-button action='addSkill' param=skillName}}Dodaj{{/paper-button}}
+    {{#paper-button action="flatButton"}}Button with action{{/paper-button}}
+  
 
 </div>
 
