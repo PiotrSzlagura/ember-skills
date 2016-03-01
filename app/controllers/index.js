@@ -32,8 +32,8 @@ export default Ember.Controller.extend({
           step3: false
         });
 
-        var myController = this.controller;
-        newSkill.save()/*.then(function(myController){
+
+        newSkill.save();/*.then(function(myController){
          myController.set("skillName", "");
          });*/
 
