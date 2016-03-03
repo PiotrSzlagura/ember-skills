@@ -18,7 +18,7 @@
       </div>
   </div>
 
-  {{#each model as |skill|}}
+  {{#each model.skills as |skill|}}
       <div class="row" {{action 'updateSkill' skill}}>
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
               {{skill.name}}
@@ -37,8 +37,11 @@
           </div>
       </div>
   {{/each}}
-  <form {{action 'addSkill' skillName on="submit" }}>
-    {{paper-input label='New skill..' value=skillName}}
+
+  {{v-get model.new 'name' 'message'}}
+
+  <form {{action 'addSkill' on="submit" }}>
+    {{paper-input label='New skill..' value=model.new.name}}
     {{#paper-button}}Dodaj{{/paper-button}}
   </form>
 
@@ -46,4 +49,3 @@
 
 
 </div>
-

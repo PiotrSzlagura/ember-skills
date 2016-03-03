@@ -1,8 +1,13 @@
 import Ember from 'ember';
 
+import skillNew from '../models/skill_form';
+
 export default Ember.Route.extend({
     model() {
-      return this.store.findAll('skill');
+      return {
+        skills: this.store.findAll('skill'),
+        new: skillNew.create({ container: this.get('container') })
+      };
     },
 
     actions: {

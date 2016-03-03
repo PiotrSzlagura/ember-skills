@@ -16,29 +16,21 @@ export default Ember.Controller.extend({
     },
 
 
-    addSkill(skillName) {
+    addSkill() {
+      const skillForm = this.get('model.new');
 
-      if (skillName.length === 0 || skillName === undefined) {
-        alert("Name can't be empty");
-      }
-      else if (skillName.length >= 30) {
-        alert("Name is too long.");
-      }
-      else {
-        let newSkill = this.store.createRecord('skill', {
-          name: skillName,
+      if ( skillForm.get('validations.isValid') ) {
+
+        let skill = this.store.createRecord('skill', {
+          name: skillForm.name,
           step1: true,
           step2: false,
           step3: false
         });
 
-
-        newSkill.save();/*.then(function(myController){
-         myController.set("skillName", "");
-         });*/
-
-        this.set("skillName", "");
-
+        this.set("model.new.name", "");
+      } else {
+        alert('wtf?')
       }
     }
   }
